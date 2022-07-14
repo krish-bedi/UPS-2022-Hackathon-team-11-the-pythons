@@ -94,9 +94,7 @@
         <input type="checkbox" value="remember-me"> Remember me
       </label>
     </div>
-    <button class="w-100 btn btn-lg btn-primary" type="submit"><a href="../album/index.html" class="w-100 btn btn-lg btn-primary">Sign in</a></button>
-    <p></p>
-    <button class="w-100 btn btn-lg btn-primary" type="submit"><a href="../examiner/index.html" class="w-100 btn btn-lg btn-primary">Examiner Sign in</a></button>
+    <button class="w-100 btn btn-lg btn-primary" type="reset" onclick="login()">Sign in</button>
     <p class="mt-5 mb-3 text-muted">&copy; 2017–2022</p>
   </form>
 </main>
@@ -105,3 +103,16 @@
     
   </body>
 </html>
+
+<script language="JavaScript">
+
+  function login() {
+      var email = document.getElementById("floatingInput").value;
+      if (email == "admin@ups.com") {
+          window.location.href="../examiner/index.html"
+      }
+      else {
+          window.location.href="../employee/index.html";
+      }
+  }
+</script>
