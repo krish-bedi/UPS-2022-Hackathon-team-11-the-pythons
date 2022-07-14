@@ -205,78 +205,161 @@
     </form>
     <hr />
     <p>By signing this document I certify that I have been advised of the following rights under applicable DOT regulations: (i) the right to review informationprovided by previous employers; (ii) The right to have errors in the information corrected by the previous employer and for that previous employer to resend thecorrected information to United Parcel Service (UPS); (iii) The right to have a rebuttal statement attached to the alleged erroneous information, ifthe previousemployer and I cannot agree on the accuracy ofthe information. I hereby acknowledge that I must notify United Parcel Service (UPS) in writing within thirty(30) days ofthe date shown below if1 chooses to exercise any ofthese rights.</p>
-    <form action="submit.php" onsubmit="return onSubmit(this)" method="post">
-        <div>
-            <canvas id="signature" width="300" height="100"></canvas>
+    <!-- Electronic Signature -->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <canvas id="sig-canvas" width="620" height="160"></canvas>
         </div>
-        <div>
-            <input type="hidden" name="signature" />
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <button class="btn btn-primary" id="sig-submitBtn">Submit Signature</button>
+          <button class="btn btn-default" id="sig-clearBtn">Clear Signature</button>
         </div>
-            <button type="submit">Submit</button>
-    </form>
+      </div>
+      <br>
+    </div>
     <style>
-        canvas#signature {
-  border: 2px solid black;
-}
-
-form>* {
-  margin: 10px;
-}
+      #sig-canvas {
+        border: 2px dotted #CCCCCC;
+        border-radius: 15px;
+        cursor: crosshair;
+      }
     </style>
     <script>
-        var canvas = document.getElementById('signature');
-var ctx = canvas.getContext("2d");
-var drawing = false;
-var prevX, prevY;
-var currX, currY;
-var signature = document.getElementsByName('signature')[0];
+      (function() {
+        window.requestAnimFrame = (function(callback) {
+          return window.requestAnimationFrame ||
+            window.webkitRequestAnimationFrame ||
+            window.mozRequestAnimationFrame ||
+            window.oRequestAnimationFrame ||
+            window.msRequestAnimaitonFrame ||
+            function(callback) {
+              window.setTimeout(callback, 1000 / 60);
+            };
+        })();
 
-canvas.addEventListener("mousemove", draw);
-canvas.addEventListener("mouseup", stop);
-canvas.addEventListener("mousedown", start);
+        var canvas = document.getElementById("sig-canvas");
+        var ctx = canvas.getContext("2d");
+        ctx.strokeStyle = "#222222";
+        ctx.lineWidth = 4;
 
-function start(e) {
-  drawing = true;
-}
+        var drawing = false;
+        var mousePos = {
+          x: 0,
+          y: 0
+        };
+        var lastPos = mousePos;
 
-function stop() {
-  drawing = false;
-  prevX = prevY = null;
-  signature.value = canvas.toDataURL();
-}
+        canvas.addEventListener("mousedown", function(e) {
+          drawing = true;
+          lastPos = getMousePos(canvas, e);
+        }, false);
 
-function draw(e) {
-  if (!drawing) {
-    return;
-  }
-  // Test for touchmove event, this requires another property.
-  var clientX = e.type === 'touchmove' ? e.touches[0].clientX : e.clientX;
-  var clientY = e.type === 'touchmove' ? e.touches[0].clientY : e.clientY;
-  currX = clientX - canvas.offsetLeft;
-  currY = clientY - canvas.offsetTop;
-  if (!prevX && !prevY) {
-    prevX = currX;
-    prevY = currY;
-  }
+        canvas.addEventListener("mouseup", function(e) {
+          drawing = false;
+        }, false);
 
-  ctx.beginPath();
-  ctx.moveTo(prevX, prevY);
-  ctx.lineTo(currX, currY);
-  ctx.strokeStyle = 'black';
-  ctx.lineWidth = 2;
-  ctx.stroke();
-  ctx.closePath();
+        canvas.addEventListener("mousemove", function(e) {
+          mousePos = getMousePos(canvas, e);
+        }, false);
 
-  prevX = currX;
-  prevY = currY;
-}
+        // Add touch event support for mobile
+        canvas.addEventListener("touchstart", function(e) {
 
-function onSubmit(e) {
-  console.log({
-    'name': document.getElementsByName('name')[0].value,
-    'signature': signature.value,
-  });
-  return false;
-}
+        }, false);
+
+        canvas.addEventListener("touchmove", function(e) {
+          var touch = e.touches[0];
+          var me = new MouseEvent("mousemove", {
+            clientX: touch.clientX,
+            clientY: touch.clientY
+          });
+          canvas.dispatchEvent(me);
+        }, false);
+
+        canvas.addEventListener("touchstart", function(e) {
+          mousePos = getTouchPos(canvas, e);
+          var touch = e.touches[0];
+          var me = new MouseEvent("mousedown", {
+            clientX: touch.clientX,
+            clientY: touch.clientY
+          });
+          canvas.dispatchEvent(me);
+        }, false);
+
+        canvas.addEventListener("touchend", function(e) {
+          var me = new MouseEvent("mouseup", {});
+          canvas.dispatchEvent(me);
+        }, false);
+
+        function getMousePos(canvasDom, mouseEvent) {
+          var rect = canvasDom.getBoundingClientRect();
+          return {
+            x: mouseEvent.clientX - rect.left,
+            y: mouseEvent.clientY - rect.top
+          }
+        }
+
+        function getTouchPos(canvasDom, touchEvent) {
+          var rect = canvasDom.getBoundingClientRect();
+          return {
+            x: touchEvent.touches[0].clientX - rect.left,
+            y: touchEvent.touches[0].clientY - rect.top
+          }
+        }
+
+        function renderCanvas() {
+          if (drawing) {
+            ctx.moveTo(lastPos.x, lastPos.y);
+            ctx.lineTo(mousePos.x, mousePos.y);
+            ctx.stroke();
+            lastPos = mousePos;
+          }
+        }
+
+        // Prevent scrolling when touching the canvas
+        document.body.addEventListener("touchstart", function(e) {
+          if (e.target == canvas) {
+            e.preventDefault();
+          }
+        }, false);
+        document.body.addEventListener("touchend", function(e) {
+          if (e.target == canvas) {
+            e.preventDefault();
+          }
+        }, false);
+        document.body.addEventListener("touchmove", function(e) {
+          if (e.target == canvas) {
+            e.preventDefault();
+          }
+        }, false);
+
+        (function drawLoop() {
+          requestAnimFrame(drawLoop);
+          renderCanvas();
+        })();
+
+        function clearCanvas() {
+          canvas.width = canvas.width;
+        }
+
+        // Set up the UI
+        var sigText = document.getElementById("sig-dataUrl");
+        var sigImage = document.getElementById("sig-image");
+        var clearBtn = document.getElementById("sig-clearBtn");
+        var submitBtn = document.getElementById("sig-submitBtn");
+        clearBtn.addEventListener("click", function(e) {
+          clearCanvas();
+          sigText.innerHTML = "Data URL for your signature will go here!";
+          sigImage.setAttribute("src", "");
+        }, false);
+        submitBtn.addEventListener("click", function(e) {
+          var dataUrl = canvas.toDataURL();
+          sigText.innerHTML = dataUrl;
+          sigImage.setAttribute("src", dataUrl);
+        }, false);
+      })();
     </script>
 </body>
