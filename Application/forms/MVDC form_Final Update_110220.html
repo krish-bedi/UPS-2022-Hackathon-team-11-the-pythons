@@ -12,40 +12,282 @@
 <body>
     <form class="px-5 mt-5">
         <h4>MOTOR VEHICLE DRIVER CERTIFICATION (MVDC) </h4>
-        <div class="form-row">
-            <div class="form-group col-md-6">
-              <label for="inputEmail4">Name</label>
-              <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
-            </div>
-            <div class="form-group col-md-6">
-              <label for="inputPassword4">UPS Employee ID#</label>
-              <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="inputAddress">Address</label>
-            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-          </div>
-          <div class="form-group">
-            <label for="inputAddress2">Address 2 (optional)</label>
-            <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-          </div>
-          <div class="form-row">
-            <div class="form-group col-md-6">
-              <label for="inputCity">City</label>
-              <input type="text" class="form-control" id="inputCity">
-            </div>
-            <div class="form-group col-md-4">
-              <label for="inputState">State</label>
-              <select id="inputState" class="form-control">
-                <option selected>Choose...</option>
-                <option>...</option>
-              </select>
-            </div>
-            <div class="form-group col-md-2">
-              <label for="inputZip">Zip</label>
-              <input type="text" class="form-control" id="inputZip">
-            </div>
-          </div>
+        <h4>MOTOR VEHICLE DRIVER CERTIFICATION (MVDC) </h4>
+      <div class="form-row">
+        <div class="col">
+          Full Name
+          <input type="text" class="form-control" placeholder="First Name & Last Name">
+        </div>
+        <div class="col">
+          Employee ID
+          <input type="text" class="form-control" placeholder="ID">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="inputAddress">Address</label>
+        <input type="text" class="form-control" id="inputAddress" placeholder="Street City State ZIP">
+      </div>
+      <div class="form-group">
+        <label for="inputAddress2">Address 2</label>
+        <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+      </div>
       </form>
+      <center>Additional Information <b>(Freight Only!)</b></center>
+      <table>
+        <tr>
+          <th>HAZMAT Expiration Date</th>
+          <th>Tanker Expiration Date</th>
+        </tr>
+        <tr>
+          <td><input type="date"></th>
+          <td><input type="date"></th>
+        </tr>
+      </table>
+      <center><b>Please do not write any Driver’s License Information on this form</b></center><br>
+      <center><b>I certify that the following is a true and complete list of traffic violations (other than parking violations) for 
+        which I have been convicted or forfeited bond or collateral during the past 12 months. This list includes all 
+        violations, in private and/or commercial vehicles, that I have had charged to me in that period.</b></center><br>
+      <center><b>If there are no violations within the past 12 months please 
+        write "None" on the first Offense line below.</b></center>
+
+      <table>
+        <tr>
+          <th><b>Date **/**/****</b></th>
+          <th><b>Offense</b></th>
+          <th><b>Location (City/State)</b></th>
+          <th><b>Type Of Vehicle Operated (Personal/Commercial)</b></th>
+        </tr>
+        <tr>
+          <td><input type="date"></td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+        </tr>
+        <tr>
+          <td><input type="date"></td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+        </tr>
+        <tr>
+          <td><input type="date"></td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+        </tr>
+        <tr>
+          <td><input type="date"></td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+        </tr>
+      </table>
+      <br>
+      <ul class="a">
+        <li>I voluntarily and fully authorize UPS to obtain driving records and reports about me for employment purposes, as set 
+          forth in the separate Disclosure of Intention to Obtain Driving Records for Employment Purposes provided to me. This 
+          authorization shall remain in effect for the remainder of my employment with UPS and shall allow UPS to obtain 
+          subsequent driving records and reports about me at any time so as to update, renew, extend or evaluate my continued 
+          employment, or to consider me for other employment positions, except where prohibited by applicable law.</li>
+        <li>I also voluntarily and fully authorize the release of all information and records necessary for the completion of the driving 
+            records and reports authorized by me above.</li>
+        <li>I understand I must notify my supervisor the next business day if my driving privilege has been suspended, revoked, or 
+          cancelled, or if I have been disqualified from operating a commercial vehicle.</li>
+        <li>I understand that, if I am qualified to operate feeder equipment or any other CDL-required vehicles (i.e., vehicles or 
+          combinations weighing 26,001 pounds or more) for UPS, I must adhere to the following requirements in addition to those 
+          listed above:</li>
+          <ul>
+            <li>I hold only one driver's license and that it was issued to me by my resident state.</li>
+            <li>I am obligated to inform both my supervisor and my resident state motor vehicle authority in writing within 30 days 
+              after a conviction of a state or local traffic law violation (excluding parking violations) or forfeiture of bond or collateral. 
+              This notification must contain my full name, license number, date of conviction, nature of violation, whether or not the 
+              violation was in a commercial vehicle, location of the offense, and my signature.</li>
+            <li>I am aware that I can be disqualified from operating a commercial motor vehicle for committing violations involving 
+              motor vehicles, including violations in my personal vehicle or other non-commercial vehicles. These disqualifications 
+              can range from 60 days to life, depending on the violation.</li>
+          </ul>
+          <li>If no violations are listed above, I certify that I have not been convicted or forfeited bond or collateral on account of any 
+            violation required to be listed during the past 12 months.</li>
+      </ul>
+      <br>
+      <p>Date: <input type="date"></p>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <canvas id="sig-canvas" width="620" height="160"></canvas>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <button class="btn btn-primary" id="sig-submitBtn">Submit Signature</button>
+            <button class="btn btn-default" id="sig-clearBtn">Clear Signature</button>
+          </div>
+        </div>
+        <br>
+      </div>
+      <center>(Complies with D.O.T. Regulations Section 391.27, titled "Record of violations")</center>
+      <style>
+        .center {
+          background-color: lightgray;
+          width: 60%;
+          border: 2px solid black;
+          padding: 10px;
+          margin: auto;
+          text-align: left;
+        }
+        table {
+          font-family: Georgia, 'Times New Roman', Times, serif;
+          border-collapse: collapse;
+          width: 100%;
+        }
+        td, th {
+          border: 1px solid #000000;
+          text-align: left;
+          padding: 8px;
+        }
+        th {
+          background-color: #dddddd;
+          border: 1px solid #000000;
+        }
+        #sig-canvas {
+          border: 2px dotted #CCCCCC;
+          border-radius: 15px;
+          cursor: crosshair;
+        }
+      </style>
+      <script>
+        (function() {
+        window.requestAnimFrame = (function(callback) {
+          return window.requestAnimationFrame ||
+            window.webkitRequestAnimationFrame ||
+            window.mozRequestAnimationFrame ||
+            window.oRequestAnimationFrame ||
+            window.msRequestAnimaitonFrame ||
+            function(callback) {
+              window.setTimeout(callback, 1000 / 60);
+            };
+        })();
+
+        var canvas = document.getElementById("sig-canvas");
+        var ctx = canvas.getContext("2d");
+        ctx.strokeStyle = "#222222";
+        ctx.lineWidth = 4;
+
+        var drawing = false;
+        var mousePos = {
+          x: 0,
+          y: 0
+        };
+        var lastPos = mousePos;
+
+        canvas.addEventListener("mousedown", function(e) {
+          drawing = true;
+          lastPos = getMousePos(canvas, e);
+        }, false);
+
+        canvas.addEventListener("mouseup", function(e) {
+          drawing = false;
+        }, false);
+
+        canvas.addEventListener("mousemove", function(e) {
+          mousePos = getMousePos(canvas, e);
+        }, false);
+
+        // Add touch event support for mobile
+        canvas.addEventListener("touchstart", function(e) {
+
+        }, false);
+
+        canvas.addEventListener("touchmove", function(e) {
+          var touch = e.touches[0];
+          var me = new MouseEvent("mousemove", {
+            clientX: touch.clientX,
+            clientY: touch.clientY
+          });
+          canvas.dispatchEvent(me);
+        }, false);
+
+        canvas.addEventListener("touchstart", function(e) {
+          mousePos = getTouchPos(canvas, e);
+          var touch = e.touches[0];
+          var me = new MouseEvent("mousedown", {
+            clientX: touch.clientX,
+            clientY: touch.clientY
+          });
+          canvas.dispatchEvent(me);
+        }, false);
+
+        canvas.addEventListener("touchend", function(e) {
+          var me = new MouseEvent("mouseup", {});
+          canvas.dispatchEvent(me);
+        }, false);
+
+        function getMousePos(canvasDom, mouseEvent) {
+          var rect = canvasDom.getBoundingClientRect();
+          return {
+            x: mouseEvent.clientX - rect.left,
+            y: mouseEvent.clientY - rect.top
+          }
+        }
+
+        function getTouchPos(canvasDom, touchEvent) {
+          var rect = canvasDom.getBoundingClientRect();
+          return {
+            x: touchEvent.touches[0].clientX - rect.left,
+            y: touchEvent.touches[0].clientY - rect.top
+          }
+        }
+
+        function renderCanvas() {
+          if (drawing) {
+            ctx.moveTo(lastPos.x, lastPos.y);
+            ctx.lineTo(mousePos.x, mousePos.y);
+            ctx.stroke();
+            lastPos = mousePos;
+          }
+        }
+
+        // Prevent scrolling when touching the canvas
+        document.body.addEventListener("touchstart", function(e) {
+          if (e.target == canvas) {
+            e.preventDefault();
+          }
+        }, false);
+        document.body.addEventListener("touchend", function(e) {
+          if (e.target == canvas) {
+            e.preventDefault();
+          }
+        }, false);
+        document.body.addEventListener("touchmove", function(e) {
+          if (e.target == canvas) {
+            e.preventDefault();
+          }
+        }, false);
+
+        (function drawLoop() {
+          requestAnimFrame(drawLoop);
+          renderCanvas();
+        })();
+
+        function clearCanvas() {
+          canvas.width = canvas.width;
+        }
+
+        // Set up the UI
+        var sigText = document.getElementById("sig-dataUrl");
+        var sigImage = document.getElementById("sig-image");
+        var clearBtn = document.getElementById("sig-clearBtn");
+        var submitBtn = document.getElementById("sig-submitBtn");
+        clearBtn.addEventListener("click", function(e) {
+          clearCanvas();
+          sigText.innerHTML = "Data URL for your signature will go here!";
+          sigImage.setAttribute("src", "");
+        }, false);
+        submitBtn.addEventListener("click", function(e) {
+          var dataUrl = canvas.toDataURL();
+          sigText.innerHTML = dataUrl;
+          sigImage.setAttribute("src", dataUrl);
+        }, false);
+      })();
+      </script>
 </body>
