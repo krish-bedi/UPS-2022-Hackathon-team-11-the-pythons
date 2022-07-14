@@ -7,7 +7,7 @@
     <meta name="author" content="nne1vnp" />
     <style type="text/css">
       * {
-        margin: 0;
+        margin: 3px;
         padding: 0;
         text-indent: 0;
       }
@@ -18,7 +18,8 @@
         font-style: normal;
         font-weight: bold;
         text-decoration: none;
-        font-size: 7pt;
+        font-size: 6pt;
+        margin: 5pt;
       }
 
       .s2 {
@@ -27,16 +28,19 @@
         font-style: normal;
         font-weight: bold;
         text-decoration: none;
-        font-size: 5pt;
+        font-size: 6pt;
+        margin: 5pt;
+        line-height: 10pt !important;
       }
 
       .s4 {
         color: black;
         font-family: Arial, sans-serif;
         font-style: normal;
-        font-weight: normal;
+        font-weight: bold;
         text-decoration: none;
-        font-size: 5pt;
+        font-size: 6pt;
+        margin:5pt;
       }
 
       .s6 {
@@ -46,6 +50,7 @@
         font-weight: bold;
         text-decoration: none;
         font-size: 5pt;
+        margin:5pt;
       }
 
       .s7 {
@@ -55,6 +60,7 @@
         font-weight: normal;
         text-decoration: none;
         font-size: 7pt;
+        margin:5pt;
       }
 
       .s9 {
@@ -108,7 +114,15 @@
         vertical-align: top;
         overflow: visible;
       }
+
+      .radio1 {
+        margin: 10pt;
+      }
+      input[type="text" i] {
+        margin:5pt;
+      }
     </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   </head>
 
   <body>
@@ -117,7 +131,7 @@
       <tr style="height:14pt">
         <td style="width:294pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:1pt" colspan="2" rowspan="4">
           <p style="text-indent: 0pt;text-align: left;"><br /></p>
-          <p class="s1" style="padding-left: 132pt;padding-right: 36pt;text-indent: 21pt;line-height: 152%;text-align: left;">United Parcel Service Delivery Vehicle Road Test Report</p>
+          <p class="s1" style="padding-left: 132pt;padding-right: 36pt;text-indent: 21pt;line-height: 152%;text-align: left;"><img width="48" height="53" src="../assets/brand/UPS Logo.png"/>United Parcel Service Delivery Vehicle Road Test Report</p>
         </td>
         <td style="width:22pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt" bgcolor="#BFBFBF">
           <p class="s2" style="padding-left: 6pt;padding-right: 2pt;text-indent: -2pt;line-height: 6pt;text-align: left;">Select One</p>
@@ -134,7 +148,7 @@
       </tr>
       <tr style="height:11pt">
         <td style="width:22pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt">
-          <p style="text-indent: 15pt;text-align: left;"><br> <input type="checkbox" ></p>
+          <p style="text-indent: 15pt;text-align: left;"><br> <input type="checkbox" class="radio1" name="group1[]"></p>
         </td>
         <td style="width:63pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt">
           <p class="s2" style="padding-top: 3pt;padding-left: 1pt;text-indent: 0pt;text-align: left;">Van <u>&lt;</u> 10,000 lbs</p>
@@ -149,7 +163,7 @@
       </tr>
       <tr style="height:11pt">
         <td style="width:22pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt">
-          <p style="text-indent: 0pt;text-align: left;"><br /><input type="checkbox" ></p>
+          <p style="text-indent: 0pt;text-align: left;"><br /><input type="checkbox" class="radio1" name="group1[]"></p>
         </td>
         <td style="width:63pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt">
           <p style="text-indent: 0pt;text-align: left;"><br /></p>
@@ -166,7 +180,7 @@
       </tr>
       <tr style="height:11pt">
         <td style="width:22pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt">
-          <p style="text-indent: 0pt;text-align: left;"><br /><input type="checkbox" ></p>
+          <p style="text-indent: 0pt;text-align: left;"><br /><input type="checkbox" class="radio1" name="group1[]"></p>
         </td>
         <td style="width:63pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt">
           <p class="s2" style="padding-top: 4pt;padding-left: 1pt;text-indent: 0pt;line-height: 5pt;text-align: left;">Box Van - Non CDL</p>
@@ -181,14 +195,14 @@
       <tr style="height:11pt">
         <td style="width:120pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt">
           <p style="text-indent: 0pt;text-align: left;"><br /></p>
-          <p class="s6" style="text-indent: 0pt;line-height: 5pt;text-align: left;">Employee ID: <input type="text" style="border: none; border-color: transparent; background-color: transparent; border-bottom: 1px solid black;" size="10"></p>
+          <p class="s6" style="text-indent: 0pt;line-height: 5pt;text-align: left;margin:5pt;">Employee ID:<input type="text" style="border: none; border-color: transparent; background-color: transparent; border-bottom: 1px solid black;" size="10"></p>
         </td>
         <td style="width:174pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt">
           <p style="text-indent: 0pt;text-align: left;"><br /></p>
-          <p class="s6" style="text-indent: 0pt;line-height: 5pt;text-align: left;">Applicant ID (If applicable): <input type="text" style="border: none; border-color: transparent; background-color: transparent; border-bottom: 1px solid black;" size="15"></p>
+          <p class="s6" style="text-indent: 0pt;line-height: 5pt;text-align: left;margin:5pt;">Applicant ID (If applicable): <input type="text" style="border: none; border-color: transparent; background-color: transparent; border-bottom: 1px solid black;" size="15"></p>
         </td>
         <td style="width:22pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:1pt">
-          <p style="text-indent: 0pt;text-align: left;"><br /><input type="checkbox" ></p>
+          <p style="text-indent: 0pt;text-align: left;"><br /><input type="checkbox" class="radio1" name="group1[]"></p>
         </td>
         <td style="width:63pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:1pt">
           <p class="s2" style="padding-top: 2pt;padding-left: 1pt;text-indent: 0pt;text-align: left;">Box Van - CDL</p>
@@ -203,7 +217,7 @@
       </tr>
       <tr style="height:20pt">
         <td style="width:294pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt" colspan="2">
-          <p class="s2" style="text-indent: 0pt;line-height: 5pt;text-align: left;">NAME <input type="text" style="text-align:left; border: none; border-color: transparent; background-color: transparent; border-bottom: 1px solid black;" size="15"></p>
+          <p class="s2" style="text-indent: 0pt;line-height: 5pt;text-align: left;margin:5pt;">NAME <input type="text" style="text-align:left; border: none; border-color: transparent; background-color: transparent; border-bottom: 1px solid black;" size="15"></p>
         </td>
         <td style="width:125pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt" colspan="3">
           <p class="s2" style="text-indent: 0pt;text-align: left;">License Exp. Date &nbsp;&nbsp; <input type="date"></p>
@@ -672,7 +686,7 @@
       </tr>
       <tr style="height:13pt">
         <td style="width:120pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt" bgcolor="#BFBFBF">
-          <p class="s1" style="padding-top: 4pt;padding-left: 5pt;text-indent: 0pt;line-height: 8pt;text-align: left;">Qualified &nbsp <input type="checkbox">
+          <p class="s1" style="padding-top: 4pt;padding-left: 5pt;text-indent: 0pt;line-height: 8pt;text-align: left;">Qualified &nbsp <input type="checkbox" class="radio" name="group2[]">
         </td>
         <td style="width:61pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-right-style:solid;border-right-width:2pt" rowspan="2">
           <p style="text-indent: 0pt;text-align: left;"><br /></p>
@@ -683,7 +697,7 @@
       </tr>
       <tr style="height:13pt">
         <td style="width:120pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt" bgcolor="#BFBFBF">
-          <p class="s1" style="padding-top: 4pt;padding-left: 5pt;text-indent: 0pt;line-height: 8pt;text-align: left;">Not Qualified &nbsp <input type="checkbox" > </p>
+          <p class="s1" style="padding-top: 4pt;padding-left: 5pt;text-indent: 0pt;line-height: 8pt;text-align: left;">Not Qualified &nbsp <input type="checkbox" name="group2[]"> </p>
         </td>
       </tr>
       <tr style="height:43pt">
@@ -718,10 +732,10 @@
     <p style="padding-top: 4pt;padding-left: 7pt;text-indent: 0pt;text-align: left;">Driver&#39;s License Number:<input type="text" style="border: none; border-color: transparent; background-color: transparent; border-bottom: 1px solid black;" size="10"></u>State:<input type="text" style="border: none; border-color: transparent; background-color: transparent; border-bottom: 1px solid black;" size="1"> </u>Expiration Date:<input type="date"></p>
     <p style="text-indent: 0pt;text-align: left;"><br /></p>
     <p style="padding-top: 4pt;padding-left: 7pt;text-indent: 0pt;text-align: left;"><b>Select One Equipment Type: </b></p>
-    <p style="padding-top: 4pt;padding-left: 7pt;text-indent: 0pt;text-align: left;"> Van <u>&lt;</u> 10,000 lbs. <input type="checkbox"> </p>
-    <p style="padding-top: 4pt;padding-left: 7pt;text-indent: 0pt;text-align: left;">Step Van &nbsp <input type="checkbox"></p>
-    <p style="padding-top: 4pt;padding-left: 7pt;text-indent: 0pt;text-align: left;">Box Van : Non-CDL &nbsp <input type="checkbox"></p>
-    <p style="padding-top: 4pt;padding-left: 7pt;text-indent: 0pt;text-align: left;">Box Van : CDL &nbsp <input type="checkbox"></p>
+    <p style="padding-top: 4pt;padding-left: 7pt;text-indent: 0pt;text-align: left;"> Van <u>&lt;</u> 10,000 lbs. <input type="checkbox" name="group3[]"> </p>
+    <p style="padding-top: 4pt;padding-left: 7pt;text-indent: 0pt;text-align: left;">Step Van &nbsp <input type="checkbox" name="group3[]"></p>
+    <p style="padding-top: 4pt;padding-left: 7pt;text-indent: 0pt;text-align: left;">Box Van : Non-CDL &nbsp <input type="checkbox" name="group3[]"></p>
+    <p style="padding-top: 4pt;padding-left: 7pt;text-indent: 0pt;text-align: left;">Box Van : CDL &nbsp <input type="checkbox" name="group3[]"></p>
     <p style="text-indent: 0pt;text-align: left;"><br /></p>
     <p style="padding-top: 4pt;padding-left: 7pt;text-indent: 0pt;text-align: left;">This is to certify that the above named driver was given a road test under my supervision on <input type="date"> consisting of: <input type="text" style="border: none; border-color: transparent; background-color: transparent; border-bottom: 1px solid black;" size="1"> miles of driving.</p>
     <p style="text-indent: 0pt;text-align: left;"><br /></p>
@@ -884,6 +898,12 @@
           sigImage.setAttribute("src", dataUrl);
         }, false);
       })();
+
+      //Jquery
+
+      $('input[type="checkbox"]').on('change', function() {
+    $('input[name="' + this.name + '"]').not(this).prop('checked', false);
+});
     </script></u></p>
     <p style="text-indent: 0pt;text-align: left;"><br /></p>
     <p style="padding-top: 4pt;padding-left: 97pt;text-indent: 0pt;text-align: center;">UPS <input type="text" style="border: none; border-color: transparent; background-color: transparent; border-bottom: 1px solid black;" size="20"></p>
