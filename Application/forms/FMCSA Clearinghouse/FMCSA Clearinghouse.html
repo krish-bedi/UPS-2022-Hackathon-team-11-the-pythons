@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Miguel Garcia, Krish Bedi, Krish Pathak, George Lilieholm, Ryan West">
+    <meta name="generator" content="Hugo 0.98.0">
+    <title>FMCSA Clearinghouse · UPS</title>
+    <style type="text/css">
+      * {
+        margin: 1%;
+        padding: 0;
+        text-indent: 0;
+      }
+      </style>
+</head>
+<body>
+    <div style="line-height: 125%;font-size: 125%;"><center><b>General Consent for Limited Queries of the Federa<br>Motor Carrier Safety Administration (FMCSA)<br>Drug and Alcohol Clearinghouse</b></center></div>
+    <br>
+    <br>
+    <br>
+       
+    
+    
+    
+    <center>
+    <div style="text-align: left; margin-left: 15%;margin-right:15%;font-size:90%;">I <input type = "text" name = "name" style="border: none; border-color: transparent; background-color: transparent; border-bottom: 1px solid black;margin:0!important;">, hereby provide consent to
+    United Parcel Service (UPS) or its agent(s) to conduct a limited query of the FMCSA Commercial
+    Driver's License Drug and Alcohol Clearinghouse to determine whether drug and alcohol violation
+    information about me exists in the Clearinghouse. This consent allows UPS to conduct multiple
+    limited queries during the duration of my employment at UPS.</div>
+    </center>
+    
+    <br>
+
+
+    <center>
+    <div style="text-align: left; margin-left: 15%;margin-right:15%;font-size:90%;">I understand that if the limited query conducted by UPS or its agent(s) indicates that drug or alcohol information about me exists in the Clearinghouse, the FMCSA will not disclose that information toUPS or its agent(s) without first obtaining additional specific consent from me.</div>
+    </center>
+    
+    <br>
+    <center>
+    <div style="text-align: left; margin-left: 15%;margin-right:15%;font-size:90%;">I further understand that if I refuse to provide consent for UPS or its agent(s) to conduct a limited query of the Clearinghouse, UPS must prohibit me from performing safety-sensitive functions, including driving a commercial motor vehicle, as required by the FMCSA's drug and alcoholregulations (49 CFR Parts 382, 383,384, and 391, Docket No. FMCSA-2011-0031, RIN 2126-Ab18).</div>
+    </center>
+<br>
+<br>
+<br>
+<br>
+
+  <div style="text-align: left; margin-left: 15%;margin-right:15%;">
+    <line>Employee ID     <input type = "text" number = "number" style="border: none; border-color: transparent; background-color: transparent; border-bottom: 1px solid black;">      Date <input type="date" id="date" name="date">  </line>
+    <p></p>
+    <line>Region/District    <input type = "text" name = "text" style="border: none; border-color: transparent; background-color: transparent; border-bottom: 1px solid black;"> / <input type = "text" name = "text" style="border: none; border-color: transparent; background-color: transparent; border-bottom: 1px solid black;">   </line>
+<br>
+<br>
+<br>
+    <line>Employee Name <input type = "text" name = "text" style="border: none; border-color: transparent; background-color: transparent; border-bottom: 1px solid black;"> </line>
+    <p></p>
+    <line>Employee Signature 
+
+<!-- Electronic Signature -->
+<div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <canvas id="sig-canvas" width="400" height="75"></canvas>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <button class="btn btn-primary" id="sig-submitBtn">Submit Signature</button>
+        <button class="btn btn-default" id="sig-clearBtn">Clear Signature</button>
+      </div>
+    </div>
+    <br>
+  </div>
+</div>
+  <style>
+    #sig-canvas {
+      border: 2px dotted #020000;
+      border-radius: 1px;
+      cursor: crosshair;
+    }
+  </style>
+  <script>
+    (function() {
+      window.requestAnimFrame = (function(callback) {
+        return window.requestAnimationFrame ||
+          window.webkitRequestAnimationFrame ||
+          window.mozRequestAnimationFrame ||
+          window.oRequestAnimationFrame ||
+          window.msRequestAnimaitonFrame ||
+          function(callback) {
+            window.setTimeout(callback, 1000 / 60);
+          };
+      })();
+
+      var canvas = document.getElementById("sig-canvas");
+      var ctx = canvas.getContext("2d");
+      ctx.strokeStyle = "#222222";
+      ctx.lineWidth = 4;
+
+      var drawing = false;
+      var mousePos = {
+        x: 0,
+        y: 0
+      };
+      var lastPos = mousePos;
+
+      canvas.addEventListener("mousedown", function(e) {
+        drawing = true;
+        lastPos = getMousePos(canvas, e);
+      }, false);
+
+      canvas.addEventListener("mouseup", function(e) {
+        drawing = false;
+      }, false);
+
+      canvas.addEventListener("mousemove", function(e) {
+        mousePos = getMousePos(canvas, e);
+      }, false);
+
+      // Add touch event support for mobile
+      canvas.addEventListener("touchstart", function(e) {
+
+      }, false);
+
+      canvas.addEventListener("touchmove", function(e) {
+        var touch = e.touches[0];
+        var me = new MouseEvent("mousemove", {
+          clientX: touch.clientX,
+          clientY: touch.clientY
+        });
+        canvas.dispatchEvent(me);
+      }, false);
+
+      canvas.addEventListener("touchstart", function(e) {
+        mousePos = getTouchPos(canvas, e);
+        var touch = e.touches[0];
+        var me = new MouseEvent("mousedown", {
+          clientX: touch.clientX,
+          clientY: touch.clientY
+        });
+        canvas.dispatchEvent(me);
+      }, false);
+
+      canvas.addEventListener("touchend", function(e) {
+        var me = new MouseEvent("mouseup", {});
+        canvas.dispatchEvent(me);
+      }, false);
+
+      function getMousePos(canvasDom, mouseEvent) {
+        var rect = canvasDom.getBoundingClientRect();
+        return {
+          x: mouseEvent.clientX - rect.left,
+          y: mouseEvent.clientY - rect.top
+        }
+      }
+
+      function getTouchPos(canvasDom, touchEvent) {
+        var rect = canvasDom.getBoundingClientRect();
+        return {
+          x: touchEvent.touches[0].clientX - rect.left,
+          y: touchEvent.touches[0].clientY - rect.top
+        }
+      }
+
+      function renderCanvas() {
+        if (drawing) {
+          ctx.moveTo(lastPos.x, lastPos.y);
+          ctx.lineTo(mousePos.x, mousePos.y);
+          ctx.stroke();
+          lastPos = mousePos;
+        }
+      }
+
+      // Prevent scrolling when touching the canvas
+      document.body.addEventListener("touchstart", function(e) {
+        if (e.target == canvas) {
+          e.preventDefault();
+        }
+      }, false);
+      document.body.addEventListener("touchend", function(e) {
+        if (e.target == canvas) {
+          e.preventDefault();
+        }
+      }, false);
+      document.body.addEventListener("touchmove", function(e) {
+        if (e.target == canvas) {
+          e.preventDefault();
+        }
+      }, false);
+
+      (function drawLoop() {
+        requestAnimFrame(drawLoop);
+        renderCanvas();
+      })();
+
+      function clearCanvas() {
+        canvas.width = canvas.width;
+      }
+
+      // Set up the UI
+      var sigText = document.getElementById("sig-dataUrl");
+      var sigImage = document.getElementById("sig-image");
+      var clearBtn = document.getElementById("sig-clearBtn");
+      var submitBtn = document.getElementById("sig-submitBtn");
+      clearBtn.addEventListener("click", function(e) {
+        clearCanvas();
+        sigText.innerHTML = "Data URL for your signature will go here!";
+        sigImage.setAttribute("src", "");
+      }, false);
+      submitBtn.addEventListener("click", function(e) {
+        var dataUrl = canvas.toDataURL();
+        sigText.innerHTML = dataUrl;
+        sigImage.setAttribute("src", dataUrl);
+      }, false);
+    })();
+  </script>
+
+
+
+
+</body>
